@@ -10,6 +10,7 @@ pipeline {
       steps {
         bat "echo. > file.txt"  // Create a file
         echo "hello stage 2"
+        
       }
     }
   }
