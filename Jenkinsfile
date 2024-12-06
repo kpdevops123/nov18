@@ -1,16 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage("hello-world"){
+    stage("hello-world") {
       steps {
-        println "hello world "
+        echo "hello world"
       }
     }
-    stage ("creat a file"){
-      steps{
-        sh "sleep 20"
-        sh "touch file.txt"
-        println "hello stage 2"
+    stage("create a file") {
+      steps {
+        bat "timeout /t 20 >nul" // Equivalent to sleep on Windows
+        bat "echo. > file.txt"  // Create a file
+        echo "hello stage 2"
       }
     }
   }
